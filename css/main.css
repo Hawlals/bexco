@@ -1,0 +1,628 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800&display=swap');
+
+html,body {
+    margin:0; 
+    padding:0; 
+    width:100%; 
+    height:100%;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+.box {
+    width:100%; 
+    height:100%; 
+    position:relative; 
+    color:#ffffff; 
+    font-size:2.4rem;
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display:none;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+ul{list-style: none;}
+img {
+    vertical-align: top;
+    max-width: 100%;
+}
+
+/* header */
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    z-index: 999;
+}
+.header h1{
+    width: 8%;
+    height: 40px;
+    position: absolute;
+    margin: 0;
+    left: 8%;
+    padding-top: 20px;
+}
+.header .nav{
+    display: flex;
+    position: absolute;
+    list-style: none;  
+    width: 100%;
+    height: 60px;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.nav li{
+    width: 8%;
+    text-align: center;
+}
+.lnb{
+    position: absolute;
+    width: 8%;
+    display: none;
+    padding-left: 0;
+    background-color: #ffffff;
+}
+.nav .lnb li{
+    width: 100%;
+}
+.nav .lnb a{
+    color: black;
+    font-weight: 500;
+}
+.header .nav a:hover{
+    color: #309BFE;
+}
+.nav .lnb a:hover{
+    color: #309BFE;
+    font-weight: 600;
+}
+.nav li a {
+    display:block;
+    position:relative;
+    line-height:40px; 
+}
+.nav li a::after {
+    content:"";
+    display:block;
+    position:absolute;
+    width:0%;
+    height:3px;
+    background-color:#309BFE;
+    transition: 0.5s;
+}
+ul li a:hover::after {width:100%;}
+.ham{
+    position: absolute;
+    width: 25px;
+    height: 18px;
+    top: 40px;
+    right: 8%;
+    cursor: pointer;
+}
+.ham span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+}
+.ham span:nth-child(2) {
+    margin: 6px 0;
+}
+/* //header */
+
+/* hamberger */
+.ham-lnb{
+    position: fixed;
+    width: 36%;
+    height: 100vh;
+    background-color: #309BFE;
+    right: -36%;
+    z-index: 999;
+    color: #ffffff;
+    transition: right 0.5s ease;
+}
+.ham-lnb .ham-wrap{
+    padding: 10%;
+    gap: 10%;
+}
+.ham-lnb .ham-wrap .ham-img{
+    position: absolute;
+    right: 20%;
+    top: 70%;
+    animation: rotate_image 6s linear infinite;
+    transform-origin: 50% 50%;
+}
+.ham-lnb .ham-wrap .ham-X i{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.ham-lnb .ham-wrap .ham-1 h3,
+.ham-lnb .ham-wrap .ham-2 h3,
+.ham-lnb .ham-wrap .ham-3 h3{
+    font-size: 3rem;
+    font-weight: 500;
+    color: #ffffff70;
+}
+.ham-lnb .ham-wrap .ham-1 p,
+.ham-lnb .ham-wrap .ham-2 p,
+.ham-lnb .ham-wrap .ham-3 p{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+.ham-lnb .ham-wrap .ham-1 p a,
+.ham-lnb .ham-wrap .ham-2 p a,
+.ham-lnb .ham-wrap .ham-3 p a{
+    color: #fff;
+    transition: 0.3s;
+}
+.ham-lnb .ham-wrap .ham-1 p:hover a,
+.ham-lnb .ham-wrap .ham-2 p:hover a,
+.ham-lnb .ham-wrap .ham-3 p:hover a{
+    color: #ffffff80;
+}
+
+@keyframes rotate_image{
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* //hamberger */
+
+/* page1 */
+.fade{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: inline-block;
+    position: absolute;
+    animation: fadeOut 2s;
+    animation-fill-mode: forwards;
+}
+.page1{
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(../img/bexco1.jpg);
+    background-repeat : no-repeat;
+    background-size : cover;
+    transition: background-image 0.5s linear;
+}
+.page1.change {
+    background-image: url(../img/bexco2.jpg);
+}
+.page1-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+.page-text{
+    position: absolute;
+    text-align: center;
+    z-index: 0;
+    cursor: default;
+}
+.page-text img{
+    animation: fadeInUp 1.5s;
+}
+.page-text h2{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 3.4rem;
+    animation: fadeInUp 2s;
+}
+.page-text p{
+    font-size: 2rem;
+    font-weight: 200;
+    animation: fadeInUp 2s;
+}
+.page1 .circle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+.page-circle{
+    width: 48%;
+    height: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    position: relative;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+.page-circle div{
+    width: 205px;
+    height: 205px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 5px double white;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: 700;
+    transition: 0.5s;
+    animation: fadeInUp 1.8s;
+}
+.page-circle div:hover{
+    color: black;
+    background-color: white;
+}
+/* 키프레임 */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.7;
+    }
+};
+
+/* page2 */
+.page2{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.page2-wrap{
+    width: 73%;
+    height: 613px;
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.page2-wrap h3,
+.page3-wrap h3,
+.page4-wrap h3,
+.page5-wrap h3{
+    font-size: 4rem;
+}
+.page2-wrap .event{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    animation: fadeInUp 2s;
+}
+.page2-wrap .event article{
+    max-width: 260px;
+    max-height: 471px;
+    overflow: hidden;
+}
+.page2-wrap .event article img{
+    position: relative;
+}
+.page2-wrap .event article .page2-black{
+    position: absolute;
+    width: 260px;
+    height: 350px;
+    background-color: #00000090;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 350px;
+    z-index: 333;
+    opacity: 0;
+    transition: 0.3s;
+}
+.page2-wrap .event article .page2-black:hover{
+    opacity: 1;
+}
+.page2-wrap .event article p{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.page2-wrap .event article p:nth-child(1){
+    font-size: 2.4rem;
+    font-weight: 500;
+    margin: 10px 0px;
+}
+.page2-wrap .event article p:nth-child(2),
+.page2-wrap .event article p:nth-child(3){
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 10px 0px;
+}
+.page2 button{
+    width: 100%;
+    font-size: 1.8rem;
+    border: none;
+    color: #fff;
+    font-weight: 100;
+    background-color: transparent;
+    position: absolute;
+    top: 85%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.page2 button:hover{
+    color: #309BFE;
+}
+.page2 button img{
+    position: absolute;
+}
+
+/* page3 */
+.page3{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(../img/page3-background.png);
+    background-repeat : no-repeat;
+    background-size : cover;
+}
+.page3-wrap{
+    width: 74%;
+    height: 650px;
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.page3-wrap .outline{
+    display: flex;
+    justify-content: space-between;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #fff transparent #fff transparent;
+}
+.page3-wrap .outline article{
+    width: 20%;
+    height: 500px;
+    position: relative;
+}
+.page3-wrap .outline article div{
+    padding: 20px;
+}
+.page3-wrap .outline article h3{
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+.page3-wrap .outline article p{
+    font-size: 2rem;
+    color: #ffffff50;
+}
+.page3-wrap .outline a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10%;
+    justify-content: center;
+    background-color: transparent;
+    margin: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+    line-height: 45px;
+}
+.page3-wrap .outline article:hover a{
+    color: #000;
+    background-color: #309BFE;
+    border: none;
+}
+.page3-wrap .outline article::before,
+.page3-wrap .outline article::after{
+    content:"";
+    display:block;
+    position:absolute;
+    width:1px;
+    height:0%;
+    background-color:#fff;
+    transition: 0.5s;
+}
+.page3-wrap .outline article::after{
+    top: 0;
+    right: 0;
+}
+.page3-wrap .outline article:hover::before,
+.page3-wrap .outline article:hover::after{
+    height: 100%;
+}
+.page3 .more-no{
+    width: 100%;
+    font-size: 1.8rem;
+    border: none;
+    color: #fff;
+    font-weight: 100;
+    background-color: transparent;
+    position: absolute;
+    top: 85%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.page3 .more-no:hover{
+    color: #309BFE;
+}
+.page3 .more-no img{
+    position: absolute;
+}
+/* //page3 */
+
+/* page4 */
+.page4{
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(../img/page4-background.jpg);
+    background-repeat : no-repeat;
+    background-size : cover;
+}
+.page4-wrap{
+    width: 74%;
+    height: 650px;
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.page4-wrap .page4-icon{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.page4-con{
+    display: flex;
+    justify-content: space-between;
+}
+.page4-con .page4-left div:nth-child(1){
+    margin-bottom: 10px;
+}
+.page4-con .page4-right div:nth-child(1){
+    margin-bottom: 10px;
+}
+.page4-con .page4-left .page4-left-img img,
+.page4-con .page4-right .page4-right-img img{
+    width: 250px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+/* .page4-con .page4-left .page4-left-img img:hover,
+.page4-con .page4-right .page4-right-img img:hover
+{
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  8px 8px 12px #d0d0d070,
+                -8px -8px 12px #f0f0f070;
+} */
+/* //page4 */
+
+/* page5 */
+.page5{
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(../img/page5-background.png);
+    background-repeat : no-repeat;
+    background-size : cover;
+}
+.page5-wrap{
+    width: 74%;
+    height: 700px;
+    position: relative;
+    top: 130px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.page5-wrap .page5-con-top{
+    width: 100%;
+    height: 270px;
+    text-align: center;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ffffff50;
+}
+.page5-wrap .page5-con-top .page5-img-wrap{
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+.page5-wrap .page5-con-top img{
+    transform: scale(0.8);
+    margin-top: 60px;
+}
+.page5-wrap .page5-con-bottom{
+    width: 100%;
+    height: 240px;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    gap: 10%;
+    border-bottom: 1px solid #fff;
+}
+.page5-wrap .page5-con-bottom .page5-con-left h4,
+.page5-wrap .page5-con-bottom .page5-con-right h4{
+    font-size: 3rem;
+    margin: 20px 0px;
+}
+.page5-wrap .page5-con-bottom .page5-con-left p,
+.page5-wrap .page5-con-bottom .page5-con-right p{
+    font-size: 2rem;
+    font-weight: 200;
+}
+.page5-wrap .page5-con-bottom .page5-con-left,
+.page5-wrap .page5-con-bottom .page5-con-right{
+    width: 28%;
+    height: 230px;
+}
+.page5-wrap .page5-con-bottom .page5-con-left button{
+    width: 100%;
+    height: 55px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 2rem;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.page5-wrap .page5-con-bottom .page5-con-left button:hover{
+    background-color: #309BFE;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+}
+.page5-wrap .page5-con-bottom .page5-con-right .page5-con-icon{
+    display: flex;
+    position: absolute;
+    gap: 10%;
+}
+/* //page5 */
+
+/* footer */
+footer{
+    display: flex;
+    position: absolute;
+    bottom: 0%;
+    font-size: 1.6rem;
+    animation: footer 2.5s;
+    color: #ffffff80;
+}
+.footer-right{
+    width: 800px;
+    margin-left: 5%;
+}
+.footer-right ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+}
+.footer-right ul li a{
+    color: #ffffff80;
+}
+.footer-right p{
+    margin: 0;
+    font-weight: 700;
+}
+@keyframes footer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+};
+/* //footer */

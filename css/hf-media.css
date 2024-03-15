@@ -1,0 +1,66 @@
+
+@media screen and (max-width:1440px){
+    footer{
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width:1270px) {
+    .header h1{
+        width: 10%;
+    }
+    .header .nav{
+        display: none;
+    }
+    .ham-lnb .ham-wrap{
+        padding: 5%;
+    }
+    .ham-lnb .ham-wrap .ham-1,
+    .ham-lnb .ham-wrap .ham-2,
+    .ham-lnb .ham-wrap .ham-3{
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width:1199px){
+    .ham-lnb .ham-wrap .ham-img {
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px){
+    .header h1{
+        width: 15%;
+    }
+    .ham{
+        top: 20px;
+    }
+    footer{
+        left: -120px;
+    }
+    .footer-right{
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width:667px){
+    .footer{
+        left: -120px;
+    }
+    .footer-left{
+        transform: scale(0.7);
+    }
+    .footer-right{
+        margin-left: 2%;
+    }
+}
+
+@media screen and (max-width:480px){
+    footer{
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+    }
+}
+
+/* page5 수정 */
